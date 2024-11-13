@@ -1,0 +1,42 @@
+{
+  "name": "kantabay",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "maid booking and management web application",
+  "main": "server.js",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "colors": "^1.4.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-async-handler": "^1.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.0.13",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "concurrently": "^6.4.0",
+    "nodemon": "^2.0.15"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node backend/server",
+    "server": "nodemon backend/server",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "data:import": "node backend/seeder",
+    "data:destroy": "node backend/seeder -d",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shay-ag/Kantabay.git"
+  },
+  "author": "Shashwat Agrawal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shay-ag/Kantabay/issues"
+  },
+  "homepage": "https://github.com/shay-ag/Kantabay#readme"
+}
